@@ -14,7 +14,7 @@
 ## Projeto 
 O objetivo deste projeto era criar uma API usando .NET Core 8 com camada de autorização OAuth2 e com autenticação
 que poderia usar cookies ou bearer token.
-Aproveitando o estudo com Identity e EF também aproveitei para criar um seed de roles e usuários.
+Aproveitando o estudo com Identity e EF também criei um seed de roles e usuários.
 Usei um pouco de scaffold para gerar a estrutura de consumo de api em um model e também engenharia 
 reversa para importar uma tabela do banco de dados como um model para o projeto. 
 Ao final configurei alguns endpoints para obrigar a autenticação para consumo e também
