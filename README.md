@@ -1,7 +1,7 @@
 ## LoginApi usando Identity
 
 ## Projeto criado usando VS 2022
-ASP.NET Core Web Api
+- ASP.NET Core Web Api
 
 ## NuGet Package
 - Microsoft.AspNetCore.Identity.EntityFrameworkCore
