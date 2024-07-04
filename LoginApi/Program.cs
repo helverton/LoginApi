@@ -26,7 +26,23 @@ builder.Services.AddSwaggerGen(options =>
 
 builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("System")));
 
-builder.Services.AddAuthorization();
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("system",
+         policy => policy.RequireRole("system"));
+    options.AddPolicy("admin",
+        policy => policy.RequireRole("admin"));
+    options.AddPolicy("user",
+        policy => policy.RequireRole("user"));
+    options.AddPolicy("seller",
+        policy => policy.RequireRole("seller"));
+    options.AddPolicy("high",
+        policy => policy.RequireRole("system", "admin"));
+    options.AddPolicy("low",
+        policy => policy.RequireRole("admin", "user", "seller"));
+    options.AddPolicy("all",
+        policy => policy.RequireRole("system", "admin", "user", "seller"));
+});
 
 
 builder.Services.AddIdentityApiEndpoints<IdentityUser>()
